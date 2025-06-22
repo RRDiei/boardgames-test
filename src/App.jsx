@@ -1,11 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { HomeLayout, NotFound } from "./pages";
+import { HomeLayout, Landing, NotFound } from "./pages";
+import { boardgameData } from "./data/database";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
     errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Landing boardgameData={boardgameData} />,
+      },
+    ],
   },
 ]);
 

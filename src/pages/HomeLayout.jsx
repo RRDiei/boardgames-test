@@ -2,10 +2,9 @@ import { Outlet } from "react-router";
 
 const HomeLayout = () => {
   return (
-    <>
-      <h1>HomeLayout</h1>
+    <div className="p-5 bg-blue-50">
       <Outlet />
-    </>
+    </div>
   );
 };
 export default HomeLayout;
