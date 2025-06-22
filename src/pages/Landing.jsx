@@ -9,10 +9,12 @@ const Landing = ({ boardgameData }) => {
       <h2 className="text-center text-3xl mt-4">Your Boardgame Website</h2>
       <div>
         <h3 className="text-2xl font-bold">Current boardgames</h3>
-        <div className="grid grid-cols-3 gap-4">
-          {boardgameData.map((bg) => (
-            <BoardgameThumb bg={bg} />
-          ))}
+        <div className="flex justify-center lg:justify-items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {boardgameData.map((bg) => (
+              <BoardgameThumb bg={bg} />
+            ))}
+          </div>
         </div>
       </div>
     </>
