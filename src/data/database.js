@@ -1,6 +1,8 @@
 export const boardgameData = [
   {
     id: "89e5d635-f04d-448f-8b91-7ee42e2595af",
+    created_at: "2025-07-01T13:11:46.873Z",
+    created_by: "Rurouni Diei",
     title: "kavango",
     description:
       "Build and protect your Nature Reserve by drafting cards and completing research",
@@ -17,6 +19,8 @@ export const boardgameData = [
   },
   {
     id: "3aecefa6-ab9c-4724-9f30-89ebacd6ce77",
+    created_at: "2025-03-14T13:11:46.873Z",
+    created_by: "Rurouni Die",
     title: "ark nova",
     description:
       "Plan and build a modern, scientifically managed zoo to support conservation projects",
