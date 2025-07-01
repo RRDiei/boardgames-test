@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-.capitalise::first-letter {
+.capitalise {
   text-transform: capitalize;
 }
 
