@@ -3,3 +3,24 @@
 .capitalise::first-letter {
   text-transform: capitalize;
 }
+
+.custom-shadow {
+  @apply relative;
+  z-index: 0;
+}
+
+.custom-shadow:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  right: -19px;
+  top: auto;
+  left: auto;
+  width: calc(100% + 20px);
+  height: calc(100% + 30px);
+  border-right: 12px solid rgba(128, 128, 128, 0.4); /* semi-transparent gray */
+  border-bottom: 15px solid rgba(128, 128, 128, 0.4);
+  filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+}

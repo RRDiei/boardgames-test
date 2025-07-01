@@ -4,8 +4,14 @@ import { FaHashtag } from "react-icons/fa";
 
 const BoardgameThumb = ({ bg }) => {
   return (
-    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-3 hover:scale-105 transition-all delay-75 hover:cursor-pointer bg-blue-50">
-      <img src={bg.img_url} alt={bg.title} />
+    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-5 hover:scale-105 transition-all delay-75 hover:cursor-pointer custom-shadow bg-blue-50">
+      <div className="flex justify-center">
+        <img
+          src={bg.img_url}
+          alt={bg.title}
+          className="w-70 h-64 object-cover"
+        />
+      </div>
       <p className="capitalise text-2xl">{bg.title}</p>
       <div className="flex">
         <div className="w-1/2">
@@ -24,7 +30,9 @@ const BoardgameThumb = ({ bg }) => {
           {bg.categories.map((category) => (
             <div>
               <FaHashtag className="text-sm text-gray-400 inline mr-2" />
-              <span className="text-sm text-gray-600 bg-gray-200 rounded-2xl px-1 py-0.5">{category}</span>
+              <span className="text-sm text-gray-600 bg-gray-200 rounded-2xl px-1 py-0.5">
+                {category}
+              </span>
             </div>
           ))}
         </div>
