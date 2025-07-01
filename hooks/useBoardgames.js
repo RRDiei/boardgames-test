@@ -5,7 +5,7 @@ export function useBoardgameContext() {
   const context = useContext(BoardgameContext);
 
   if (!context) {
-    throw new Error("No context provided!");
+    throw new Error("No boardgame context provided!");
   }
 
   return context;

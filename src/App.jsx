@@ -18,20 +18,24 @@ const router = createBrowserRouter([
 ]);
 
 export const BoardgameContext = createContext(null);
+export const UserContext = createContext(null);
 
 function App() {
-  const [boardgames, setBoardgames] = useState(boardgameData);
+  const [boardgames, setBoardgames] = useState(boardgameData || []);
+  const [user, setUser] = useState(null);
 
   return (
     <>
-      <BoardgameContext.Provider
-        value={{
-          boardgames,
-          setBoardgames,
-        }}
-      >
-        <RouterProvider router={router} />
-      </BoardgameContext.Provider>
+      <UserContext.Provider value={{ user, setUser }}>
+        <BoardgameContext.Provider
+          value={{
+            boardgames,
+            setBoardgames,
+          }}
+        >
+          <RouterProvider router={router} />
+        </BoardgameContext.Provider>
+      </UserContext.Provider>
     </>
   );
 }
