@@ -28,7 +28,7 @@ const BoardgameThumb = ({ bg }) => {
         </div>
         <div className="w-1/2">
           {bg.categories.map((category) => (
-            <div>
+            <div key={category}>
               <FaHashtag className="text-sm text-gray-400 inline mr-2" />
               <span className="text-sm text-gray-600 bg-gray-200 rounded-2xl px-1 py-0.5">
                 {category}

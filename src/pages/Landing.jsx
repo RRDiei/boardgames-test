@@ -1,6 +1,8 @@
+import { useBoardgameContext } from "../../hooks/useBoardgames";
 import { BoardgameThumb } from "../components";
 
-const Landing = ({ boardgameData }) => {
+const Landing = () => {
+  const { boardgames } = useBoardgameContext();
   return (
     <>
       <h1 className="text-center text-5xl font-sans font-bold">
@@ -11,8 +13,8 @@ const Landing = ({ boardgameData }) => {
         <h3 className="text-2xl font-bold">Current boardgames</h3>
         <div className="flex justify-center lg:justify-items-start">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {boardgameData.map((bg) => (
-              <BoardgameThumb bg={bg} />
+            {boardgames.map((bg) => (
+              <BoardgameThumb key={bg.id} bg={bg} />
             ))}
           </div>
         </div>

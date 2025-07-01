@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { HomeLayout, Landing, NotFound } from "./pages";
 import { boardgameData } from "./data/database";
+import { createContext, useState } from "react";
 
 const router = createBrowserRouter([
   {
@@ -10,14 +11,29 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing boardgameData={boardgameData} />,
+        element: <Landing boardgameData />,
       },
     ],
   },
 ]);
 
+export const BoardgameContext = createContext(null);
+
 function App() {
-  return <RouterProvider router={router} />;
+  const [boardgames, setBoardgames] = useState(boardgameData);
+
+  return (
+    <>
+      <BoardgameContext.Provider
+        value={{
+          boardgames,
+          setBoardgames,
+        }}
+      >
+        <RouterProvider router={router} />
+      </BoardgameContext.Provider>
+    </>
+  );
 }
 
 export default App;

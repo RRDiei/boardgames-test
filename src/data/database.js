@@ -1,5 +1,6 @@
 export const boardgameData = [
   {
+    id: "89e5d635-f04d-448f-8b91-7ee42e2595af",
     title: "kavango",
     description:
       "Build and protect your Nature Reserve by drafting cards and completing research",
@@ -15,6 +16,7 @@ export const boardgameData = [
       "https://cf.geekdo-images.com/XjECtrE-qESpVUMCVD-TJQ__imagepagezoom/img/xx4j-zG0XjFO_2tsMl6ahs9zsRU=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic7976828.jpg",
   },
   {
+    id: "3aecefa6-ab9c-4724-9f30-89ebacd6ce77",
     title: "ark nova",
     description:
       "Plan and build a modern, scientifically managed zoo to support conservation projects",
