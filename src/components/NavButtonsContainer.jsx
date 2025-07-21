@@ -20,7 +20,7 @@ const NavButtonsContainer = () => {
 
   if (!user) {
     return (
-      <div className="flex gap-3 me-2">
+      <div className="flex gap-3 me-2 w-100 justify-end">
         <Link to="/login" className="btn">
           Log In
         </Link>
@@ -32,7 +32,7 @@ const NavButtonsContainer = () => {
   }
 
   return (
-    <div className="flex gap-2 me-2 items-center relative overflow-visible">
+    <div className="flex gap-2 me-2 items-center relative overflow-visible w-100 justify-end">
       <h2 className="font-semibold italic text-lg mr-1">{user.name}</h2>
       {user?.avatar ? (
         <img
@@ -51,7 +51,7 @@ const NavButtonsContainer = () => {
       )}
       <div
         ref={menuRef}
-        className={`absolute -bottom-15 left-0 w-[150px] bg-gray-200 rounded-md
+        className={`absolute -bottom-15 left-60 w-[150px] bg-gray-200 rounded-md
               transition-all duration-200 ease-in-out border-1 border-black flex flex-col
               ${
                 showMenu

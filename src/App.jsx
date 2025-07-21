@@ -36,7 +36,7 @@ export const UserContext = createContext(null);
 
 function App() {
   const [boardgames, setBoardgames] = useState(boardgameData || []);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(tempUser);
 
   return (
     <>
