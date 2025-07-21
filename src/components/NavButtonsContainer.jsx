@@ -2,6 +2,7 @@ import { useUserContext } from "../../hooks/useUser";
 import { FaDiceD20 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { useState, useRef, useEffect } from "react";
+import useClickOutside from "../hooks/useClickOutside";
 
 const NavButtonsContainer = () => {
   const { user, setUser } = useUserContext();
@@ -10,26 +11,7 @@ const NavButtonsContainer = () => {
   const avatarRef = useRef(null);
   const navigate = useNavigate();
 
-  function handleClickOutside(event) {
-    if (
-      menuRef.current &&
-      !menuRef.current.contains(event.target) &&
-      avatarRef.current &&
-      !avatarRef.current.contains(event.target)
-    ) {
-      setShowMenu(false);
-    }
-  }
-
-  useEffect(() => {
-    if (showMenu) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showMenu]);
+  useClickOutside([menuRef, avatarRef], () => setShowMenu(false), showMenu);
 
   const logout = () => {
     setUser(null);
