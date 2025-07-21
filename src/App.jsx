@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { HomeLayout, Landing, NotFound, Login } from "./pages";
+import { HomeLayout, Landing, NotFound, Login, Register } from "./pages";
 import { boardgameData } from "./data/database";
 import { createContext, useState } from "react";
 
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
