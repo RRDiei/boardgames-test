@@ -4,6 +4,8 @@ import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import { users } from "../data/users";
 import bcrypt from "bcryptjs";
+import { validatePassword, validateUsername } from "../../utils/validators";
+import { FaInfoCircle } from "react-icons/fa";
 
 const Register = () => {
   const { user, setUser } = useUserContext();
@@ -11,6 +13,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [toastMessage, setToastMessage] = useState("You're already logged in!");
+  const [usernameInfo, setUsernameInfo] = useState(false);
+  const [passwordInfo, setPasswordInfo] = useState(false);
   const navigate = useNavigate();
 
   // Redirect to home page if there is a user already logged in
@@ -24,12 +28,7 @@ const Register = () => {
 
   const submitRegisterForm = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      toast.error("Passwords don't match! Please, try again!");
-      setPassword("");
-      setConfirmPassword("");
-      return;
-    }
+
     const foundUser = users.find((user) => user.name === username);
     if (foundUser) {
       toast.error(
@@ -38,6 +37,27 @@ const Register = () => {
       setConfirmPassword("");
       setPassword("");
       setUsername("");
+      return;
+    }
+
+    if (!validateUsername(username)) {
+      setConfirmPassword("");
+      setPassword("");
+      toast.error("Username not valid. Please, check criteria!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast.error("Passwords don't match! Please, try again!");
+      setPassword("");
+      setConfirmPassword("");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      // setConfirmPassword("");
+      // setPassword("");
+      toast.error("Invalid password. Please, check criteria!");
       return;
     }
 
@@ -62,9 +82,13 @@ const Register = () => {
           onSubmit={submitRegisterForm}
           className="flex flex-col w-full h-full justify-around items-center"
         >
-          <div>
+          <div className="relative">
             <label htmlFor="username" className="customLabel">
-              Username:
+              Username:{" "}
+              <FaInfoCircle
+                className="inline text-amber-400 hover:cursor-pointer"
+                onClick={() => setUsernameInfo(!usernameInfo)}
+              />
             </label>
             <input
               className="customInput"
@@ -75,20 +99,50 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
               required
             />
+            <div
+              className={`absolute left-42 top-1 bg-gray-200 p-1 rounded-lg transition-all duration-200 ease-in-out w-100 ${
+                usernameInfo
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "opacity-0 translate-y-2 scale-95 pointer-events-none"
+              }`}
+            >
+              <p className="text-sm">
+                Username must be between 5 and 20 characters long. No special
+                characters allowed
+              </p>
+            </div>
           </div>
-          <div>
+
+          <div className="relative">
             <label htmlFor="password" className="customLabel">
-              Password:
+              Password:{" "}
+              <FaInfoCircle
+                className="inline text-amber-400 hover:cursor-pointer"
+                onClick={() => setPasswordInfo(!passwordInfo)}
+              />
             </label>
             <input
               className="customInput"
-              type="password"
+              type="text"
               name="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <div
+              className={`absolute left-42 top-1 bg-gray-200 p-1 rounded-lg transition-all duration-200 ease-in-out w-150 ${
+                passwordInfo
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "opacity-0 translate-y-2 scale-95 pointer-events-none"
+              }`}
+            >
+              <p className="text-sm">
+                Password must be at least 8 characters long, and include an
+                uppercase letter, a lowercase letter, a special character and a
+                number
+              </p>
+            </div>
           </div>
           <div>
             <label htmlFor="confirmPassword" className="customLabel">
@@ -96,7 +150,7 @@ const Register = () => {
             </label>
             <input
               className="customInput"
-              type="password"
+              type="text"
               name="confirmPassword"
               id="confirmPassword"
               value={confirmPassword}
