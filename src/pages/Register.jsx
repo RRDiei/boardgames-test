@@ -3,6 +3,7 @@ import { useUserContext } from "../../hooks/useUser";
 import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import { users } from "../data/users";
+import bcrypt from "bcryptjs";
 
 const Register = () => {
   const { user, setUser } = useUserContext();
@@ -21,7 +22,7 @@ const Register = () => {
     }
   }, [user, navigate]);
 
-  const submitRegisterForm = (e) => {
+  const submitRegisterForm = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       toast.error("Passwords don't match! Please, try again!");
@@ -39,17 +40,18 @@ const Register = () => {
       setUsername("");
       return;
     }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = {
       name: username,
-      password,
+      password: hashedPassword,
       avatar: "",
     };
     users.push(newUser);
+    console.log(users);
     setToastMessage("User created successfully!");
     setUser(newUser);
-    navigate("/", {
-      state: { showToast: true, message: toastMessage },
-    });
   };
 
   return (

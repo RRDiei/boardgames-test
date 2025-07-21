@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useUserContext } from "../../hooks/useUser";
 import { users } from "../data/users";
 import { useNavigate } from "react-router";
+import bcrypt from "bcryptjs";
+import { toast, ToastContainer } from "react-toastify";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -19,12 +21,15 @@ const LoginPage = () => {
     }
   }, [user, navigate]);
 
-  const submitLoginForm = (e) => {
+  const submitLoginForm = async (e) => {
     e.preventDefault();
     const foundUser = users.find((user) => user.name === username);
-    console.log(foundUser);
-    if (!foundUser || password !== foundUser.password) {
-      alert("Incorrect username or password. Try again!");
+    const matchingPasswords = await bcrypt.compare(
+      password,
+      foundUser.password
+    );
+    if (!foundUser || !matchingPasswords) {
+      toast.error("Incorrect username or password. Try again!");
       setUsername("");
       setPassword("");
     } else {
@@ -82,6 +87,7 @@ const LoginPage = () => {
           here!
         </a>
       </p>
+      <ToastContainer />
     </div>
   );
 };
