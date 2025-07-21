@@ -6,13 +6,16 @@ import { useNavigate } from "react-router";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [toastMessage, setToastMessage] = useState("You're already logged in!");
   const { user, setUser } = useUserContext();
   const navigate = useNavigate();
 
   // Redirect to home page if there is a user already logged in
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate("/", {
+        state: { showToast: true, message: toastMessage },
+      });
     }
   }, [user, navigate]);
 
@@ -25,8 +28,8 @@ const LoginPage = () => {
       setUsername("");
       setPassword("");
     } else {
+      setToastMessage("Logged in successfully!");
       setUser(foundUser);
-      navigate("/");
     }
   };
 

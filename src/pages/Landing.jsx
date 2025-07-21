@@ -1,8 +1,19 @@
 import { useBoardgameContext } from "../../hooks/useBoardgames";
 import { BoardgameThumb } from "../components";
+import { ToastContainer, toast } from "react-toastify";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 const Landing = () => {
   const { boardgames } = useBoardgameContext();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.showToast) {
+      toast.success(location.state.message);
+    }
+  }, [location.state]);
+
   return (
     <>
       <h1 className="text-center text-5xl font-sans font-bold">
@@ -19,6 +30,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
