@@ -23,6 +23,8 @@ const LoginPage = () => {
 
   const submitLoginForm = async (e) => {
     e.preventDefault();
+    setUsername(username.trim());
+    setPassword(password.trim());
     const foundUser = users.find((user) => user.name === username);
     const matchingPasswords = await bcrypt.compare(
       password,

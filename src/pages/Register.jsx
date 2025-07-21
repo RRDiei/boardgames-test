@@ -29,6 +29,10 @@ const Register = () => {
   const submitRegisterForm = async (e) => {
     e.preventDefault();
 
+    setUsername(username.trim());
+    setPassword(password.trim());
+    setConfirmPassword(confirmPassword.trim());
+
     const foundUser = users.find((user) => user.name === username);
     if (foundUser) {
       toast.error(
@@ -55,8 +59,8 @@ const Register = () => {
     }
 
     if (!validatePassword(password)) {
-      // setConfirmPassword("");
-      // setPassword("");
+      setConfirmPassword("");
+      setPassword("");
       toast.error("Invalid password. Please, check criteria!");
       return;
     }
@@ -123,7 +127,7 @@ const Register = () => {
             </label>
             <input
               className="customInput"
-              type="text"
+              type="password"
               name="password"
               id="password"
               value={password}
@@ -150,7 +154,7 @@ const Register = () => {
             </label>
             <input
               className="customInput"
-              type="text"
+              type="password"
               name="confirmPassword"
               id="confirmPassword"
               value={confirmPassword}
