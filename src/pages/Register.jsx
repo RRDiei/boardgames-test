@@ -73,7 +73,6 @@ const Register = () => {
       avatar: "",
     };
     users.push(newUser);
-    console.log(users);
     setToastMessage("User created successfully!");
     setUser(newUser);
   };

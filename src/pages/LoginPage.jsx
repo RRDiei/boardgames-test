@@ -36,7 +36,10 @@ const LoginPage = () => {
       setPassword("");
     } else {
       setToastMessage("Logged in successfully!");
-      setUser(foundUser);
+      setUser({
+        name: foundUser.name,
+        avatar: foundUser.avatar,
+      });
     }
   };
 
