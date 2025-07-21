@@ -36,3 +36,19 @@
 .btn:hover {
   @apply bg-indigo-400;
 }
+
+.customInput {
+  @apply bg-white border-1 rounded-md block p-2 mt-3 w-100;
+}
+
+.customLabel {
+  @apply text-2xl font-sans font-semibold;
+}
+
+.login-btn {
+  @apply bg-amber-400 font-sans text-xl font-bold;
+}
+
+.login-btn:hover {
+  @apply bg-amber-700;
+}

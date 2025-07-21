@@ -1,8 +1,8 @@
 import { useUserContext } from "../../hooks/useUser";
 import { FaDiceD20 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
-import { useState, useRef, useEffect } from "react";
-import useClickOutside from "../hooks/useClickOutside";
+import { useState, useRef } from "react";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const NavButtonsContainer = () => {
   const { user, setUser } = useUserContext();

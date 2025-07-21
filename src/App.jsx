@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { HomeLayout, Landing, NotFound } from "./pages";
+import { HomeLayout, Landing, NotFound, Login } from "./pages";
 import { boardgameData } from "./data/database";
 import { createContext, useState } from "react";
 
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing boardgameData />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
@@ -28,7 +32,7 @@ export const UserContext = createContext(null);
 
 function App() {
   const [boardgames, setBoardgames] = useState(boardgameData || []);
-  const [user, setUser] = useState(tempUser);
+  const [user, setUser] = useState(null);
 
   return (
     <>
