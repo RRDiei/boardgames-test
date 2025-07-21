@@ -1,8 +1,9 @@
 import { useBoardgameContext } from "../../hooks/useBoardgames";
 import { BoardgameThumb } from "../components";
 import { ToastContainer, toast } from "react-toastify";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const Landing = () => {
   const { boardgames } = useBoardgameContext();
@@ -21,7 +22,14 @@ const Landing = () => {
       </h1>
       <h2 className="text-center text-3xl mt-4">Your Boardgame Website</h2>
       <div className="h-screen">
-        <h3 className="text-2xl font-bold">Latest boardgames</h3>
+        <div className="flex justify-between">
+          <h3 className="text-2xl font-bold">Latest boardgames</h3>
+          <Link to="/boardgames">
+            <h3 className="text-xl italic transition-all duration-200 ease-in-out hover:translate-x-1">
+              See all games <FaArrowRight className="inline" />
+            </h3>
+          </Link>
+        </div>
         <div className="flex justify-center lg:justify-items-start">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {boardgames.map((bg) => (

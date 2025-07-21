@@ -40,4 +40,46 @@ export const boardgameData = [
     img_url:
       "https://cf.geekdo-images.com/SoU8p28Sk1s8MSvoM4N8pQ__imagepagezoom/img/3AiTYsFmreOKB3V2xTmolY1JiOo=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic6293412.jpg",
   },
+  {
+    id: "3aecefa6-ab8c-4724-9f30-89ebacd6ce77",
+    created_at: "2025-07-21T16:12:46.873Z",
+    created_by: "Rurouni Die",
+    title: "galactic cruise",
+    description:
+      "Build and launch ships to send guests on luxurious space vacations",
+    year: 2025,
+    min_players: 1,
+    max_players: 4,
+    playtime: "90-150",
+    designers: ["t.k. king", "dennis northcott", "koltin thompson"],
+    artists: ["ian o'toole"],
+    publisher: "kinson key games",
+    categories: [
+      "aviation",
+      "economic",
+      "industry",
+      "science fiction",
+      "space exploration",
+    ],
+    img_url:
+      "https://cf.geekdo-images.com/l-LMcklO683dyVlnRZS3mg__imagepage/img/pACIIfXy_-DuIuBfollMu7UNtPM=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7556818.jpg",
+  },
+  {
+    id: "3aecefa6-ab8c-4724-9f30-89ebacd6ee77",
+    created_at: "2024-10-11T10:12:46.873Z",
+    created_by: "Rurouni Die",
+    title: "huang",
+    description:
+      "Build and launch ships to send guests on luxurious space Unite China under your banner, quash your enemies, and claim the Emperor's throne!",
+    year: 2024,
+    min_players: 2,
+    max_players: 4,
+    playtime: "90",
+    designers: ["reiner knizia"],
+    artists: ["bartek jędrzejewski"],
+    publisher: "phalanx",
+    categories: ["ancient civilisation", "territory building"],
+    img_url:
+      "https://cf.geekdo-images.com/xLKOIcS7uozAP1DiIIw_Tw__imagepage/img/vheAvGGBftiri8iZRTRzV8xXuK0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7353926.png",
+  },
 ];

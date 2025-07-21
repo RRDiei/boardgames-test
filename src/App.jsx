@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import { HomeLayout, Landing, NotFound, Login, Register } from "./pages";
 import { boardgameData } from "./data/database";
 import { createContext, useState } from "react";
+import AllBoardgames from "./pages/AllBoardgames";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,21 @@ const router = createBrowserRouter([
         element: <Landing boardgameData />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />,
+      },
+      {
+        path: "boardgames",
+        children: [
+          {
+            index: true,
+            element: <AllBoardgames />,
+          },
+        ],
       },
     ],
   },
