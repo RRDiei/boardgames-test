@@ -70,7 +70,7 @@ export const boardgameData = [
     created_by: "Rurouni Die",
     title: "huang",
     description:
-      "Build and launch ships to send guests on luxurious space Unite China under your banner, quash your enemies, and claim the Emperor's throne!",
+      "Unite China under your banner, quash your enemies, and claim the Emperor's throne!",
     year: 2024,
     min_players: 2,
     max_players: 4,
@@ -81,5 +81,23 @@ export const boardgameData = [
     categories: ["ancient civilisation", "territory building"],
     img_url:
       "https://cf.geekdo-images.com/xLKOIcS7uozAP1DiIIw_Tw__imagepage/img/vheAvGGBftiri8iZRTRzV8xXuK0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7353926.png",
+  },
+  {
+    id: "2afcefa6-ab8c-4724-9f30-89ebacd6ee77",
+    created_at: "2023-01-12T15:11:46.873Z",
+    created_by: "Rurouni Die",
+    title: "iki",
+    description:
+      "Build and Hire artisans, set them up in the market and acquire prestige in feudal Japan",
+    year: 2015,
+    min_players: 2,
+    max_players: 4,
+    playtime: "60-90",
+    designers: ["koota yamada"],
+    artists: ["dommly", "david sitbon", "koota yamada"],
+    publisher: "sorry we are french",
+    categories: ["medieval"],
+    img_url:
+      "https://cf.geekdo-images.com/ypE6HrTY1Xvpt1XCpKlMBw__imagepage/img/w6deax55UhAtxEmak6hkSPzI6Es=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5960068.png",
   },
 ];

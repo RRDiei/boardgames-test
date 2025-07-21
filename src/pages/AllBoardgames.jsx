@@ -5,7 +5,7 @@ const AllBoardgames = () => {
   const { boardgames } = useBoardgameContext();
 
   return (
-    <div>
+    <div className="min-h-screen">
       <h2 className="text-center text-3xl mt-4">All Boardgames</h2>
       <div className="flex justify-center lg:justify-items-start">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

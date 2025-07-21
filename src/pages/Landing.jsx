@@ -4,10 +4,14 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link, useLocation } from "react-router";
 import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { threeLatest } from "../../utils/latest-calculator";
 
 const Landing = () => {
   const { boardgames } = useBoardgameContext();
   const location = useLocation();
+
+  const latest = threeLatest(boardgames);
+  console.log(latest);
 
   useEffect(() => {
     if (location.state?.showToast) {
@@ -32,7 +36,7 @@ const Landing = () => {
         </div>
         <div className="flex justify-center lg:justify-items-start">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {boardgames.map((bg) => (
+            {latest.map((bg) => (
               <BoardgameThumb key={bg.id} bg={bg} />
             ))}
           </div>

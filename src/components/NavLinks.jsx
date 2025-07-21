@@ -12,6 +12,14 @@ const NavLinks = () => {
         Home
       </NavLink>
       <NavLink
+        to="/boardgames"
+        className={({ isActive, isPending }) =>
+          isPending ? "nav-pending" : isActive ? "nav-active" : ""
+        }
+      >
+        Boardgames
+      </NavLink>
+      <NavLink
         to="/about"
         className={({ isActive, isPending }) =>
           isPending ? "nav-pending" : isActive ? "nav-active" : ""
