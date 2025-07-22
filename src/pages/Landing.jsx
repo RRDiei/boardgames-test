@@ -11,7 +11,6 @@ const Landing = () => {
   const location = useLocation();
 
   const latest = threeLatest(boardgames);
-  console.log(latest);
 
   useEffect(() => {
     if (location.state?.showToast) {
