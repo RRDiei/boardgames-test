@@ -100,4 +100,22 @@ export const boardgameData = [
     img_url:
       "https://cf.geekdo-images.com/ypE6HrTY1Xvpt1XCpKlMBw__imagepage/img/w6deax55UhAtxEmak6hkSPzI6Es=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5960068.png",
   },
+  {
+    id: "2afcefa6-ab8c-4724-9f30-90ebacd6ee77",
+    created_at: "2025-07-21T15:16:57.873Z",
+    created_by: "Rurouni Die",
+    title: "pergola",
+    description:
+      "Build Grow plants, invite insects, and make your garden look beautiful",
+    year: 2025,
+    min_players: 1,
+    max_players: 4,
+    playtime: "45-60",
+    designers: ["michał gołąb gołębiowski", "przemek wojtkowiak"],
+    artists: ["karolia kijak"],
+    publisher: "rebel studio",
+    categories: ["animals", "farming"],
+    img_url:
+      "https://cf.geekdo-images.com/uZk1zNLrFWOtYzmgUSZBog__imagepage/img/KTSqsAUixPJTovFLnwu1-Bkdco8=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8515455.png",
+  },
 ];

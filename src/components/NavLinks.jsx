@@ -1,40 +1,30 @@
-import { NavLink } from "react-router";
+import { SingleNavItem } from ".";
 
 const NavLinks = () => {
+  const navlinks = [
+    {
+      link: "/",
+      title: "Home",
+    },
+    {
+      link: "/boardgames",
+      title: "Boardgames",
+    },
+    {
+      link: "/about",
+      title: "About",
+    },
+    {
+      link: "/contact",
+      title: "Contact",
+    },
+  ];
+
   return (
     <div className="flex gap-2 items-center px-3 text-xl font-semibold">
-      <NavLink
-        to="/"
-        className={({ isActive, isPending }) =>
-          isPending ? "nav-pending" : isActive ? "nav-active" : ""
-        }
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/boardgames"
-        className={({ isActive, isPending }) =>
-          isPending ? "nav-pending" : isActive ? "nav-active" : ""
-        }
-      >
-        Boardgames
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive, isPending }) =>
-          isPending ? "nav-pending" : isActive ? "nav-active" : ""
-        }
-      >
-        About
-      </NavLink>
-      <NavLink
-        to="/contact"
-        className={({ isActive, isPending }) =>
-          isPending ? "nav-pending" : isActive ? "nav-active" : ""
-        }
-      >
-        Contact
-      </NavLink>
+      {navlinks.map((navlink) => (
+        <SingleNavItem key={navlink.title} navlink={navlink} />
+      ))}
     </div>
   );
 };
