@@ -5,7 +5,7 @@ import NavButtonsContainer from "./NavButtonsContainer";
 const NavBar = () => {
   return (
     <>
-      <nav className="h-18 bg-blue-100 w-full border-b-1 rounded-md">
+      <nav className="h-18 bg-blue-100 w-full border-b-1 rounded-md sticky top-0 z-10">
         <div className="flex flex-row justify-between items-center w-full h-full">
           <div className="px-3">
             <Link to="/">

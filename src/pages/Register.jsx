@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useUserContext } from "../../hooks/useUser";
-import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import { users } from "../data/users";
 import bcrypt from "bcryptjs";
 import { validatePassword, validateUsername } from "../../utils/validators";
 import { FaInfoCircle } from "react-icons/fa";
+import useRedirectHome from "../../hooks/useRedirectHome";
 
 const Register = () => {
   const { user, setUser } = useUserContext();
@@ -15,16 +15,9 @@ const Register = () => {
   const [toastMessage, setToastMessage] = useState("You're already logged in!");
   const [usernameInfo, setUsernameInfo] = useState(false);
   const [passwordInfo, setPasswordInfo] = useState(false);
-  const navigate = useNavigate();
 
   // Redirect to home page if there is a user already logged in
-  useEffect(() => {
-    if (user) {
-      navigate("/", {
-        state: { showToast: true, message: toastMessage },
-      });
-    }
-  }, [user, navigate]);
+  useRedirectHome(user, toastMessage);
 
   const submitRegisterForm = async (e) => {
     e.preventDefault();
