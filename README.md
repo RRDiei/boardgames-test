@@ -23,3 +23,6 @@ _Boardgames_ uses [tailwindcss](https://tailwindcss.com/) for styling so that I 
 For coyright reasons, no images are provided with the test boardgames. Instead, icons from [react-icons](https://react-icons.github.io/react-icons/) are provided.
 
 The description of each boardgame comes from the boardgame publishers themselves.
+
+## License
+MIT © RRDiei
