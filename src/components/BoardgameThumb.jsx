@@ -2,10 +2,11 @@ import React from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaClock } from "react-icons/fa";
 import { FaHashtag } from "react-icons/fa";
+import { LiaDiceSolid } from "react-icons/lia";
 
 const BoardgameThumb = ({ bg }) => {
   return (
-    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-5 hover:scale-110 transition-all delay-75 hover:cursor-pointer custom-shadow bg-gray-100">
+    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-5 hover:scale-110 transition-all delay-75 hover:cursor-pointer bg-gray-100">
       <div className="flex justify-center">
         {bg.img_url ? (
           <img
@@ -13,8 +14,10 @@ const BoardgameThumb = ({ bg }) => {
             alt={bg.title}
             className="w-70 h-64 object-cover"
           />
-        ) : (
+        ) : bg.img ? (
           React.createElement(bg.img, { className: "w-70 h-64" })
+        ) : (
+          <LiaDiceSolid className="w-70 h-64" />
         )}
       </div>
       <p className="capitalise text-2xl">{bg.title}</p>
