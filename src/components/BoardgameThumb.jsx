@@ -2,9 +2,11 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { FaClock } from "react-icons/fa";
 import { FaHashtag } from "react-icons/fa";
 
+// bg-blue-50
+
 const BoardgameThumb = ({ bg }) => {
   return (
-    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-5 hover:scale-105 transition-all delay-75 hover:cursor-pointer custom-shadow bg-blue-50">
+    <div className="border-2 rounded-md w-70 md:w-80 p-2 mt-5 hover:scale-110 transition-all delay-75 hover:cursor-pointer custom-shadow bg-gray-100">
       <div className="flex justify-center">
         <img
           src={bg.img_url}
