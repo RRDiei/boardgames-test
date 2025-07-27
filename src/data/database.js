@@ -1,3 +1,12 @@
+import {
+  GiElephantHead,
+  GiLion,
+  GiBattleGear,
+  GiJapan,
+  GiGardeningShears,
+} from "react-icons/gi";
+import { IoRocket } from "react-icons/io5";
+
 export const boardgameData = [
   {
     id: "89e5d635-f04d-448f-8b91-7ee42e2595af",
@@ -14,8 +23,8 @@ export const boardgameData = [
     artists: ["matt brown"],
     publisher: "mazaza games",
     categories: ["animals", "card game", "educational", "environmental"],
-    img_url:
-      "https://cf.geekdo-images.com/XjECtrE-qESpVUMCVD-TJQ__imagepagezoom/img/xx4j-zG0XjFO_2tsMl6ahs9zsRU=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic7976828.jpg",
+    img: GiLion,
+    img_url: "",
   },
   {
     id: "3aecefa6-ab9c-4724-9f30-89ebacd6ce77",
@@ -37,8 +46,8 @@ export const boardgameData = [
     ],
     publisher: "super meeple",
     categories: ["animals", "economic", "environmental"],
-    img_url:
-      "https://cf.geekdo-images.com/SoU8p28Sk1s8MSvoM4N8pQ__imagepagezoom/img/3AiTYsFmreOKB3V2xTmolY1JiOo=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic6293412.jpg",
+    img_url: "",
+    img: GiElephantHead,
   },
   {
     id: "3aecefa6-ab8c-4724-9f30-89ebacd6ce77",
@@ -61,8 +70,8 @@ export const boardgameData = [
       "science fiction",
       "space exploration",
     ],
-    img_url:
-      "https://cf.geekdo-images.com/l-LMcklO683dyVlnRZS3mg__imagepage/img/pACIIfXy_-DuIuBfollMu7UNtPM=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7556818.jpg",
+    img: IoRocket,
+    img_url: "",
   },
   {
     id: "3aecefa6-ab8c-4724-9f30-89ebacd6ee77",
@@ -79,8 +88,8 @@ export const boardgameData = [
     artists: ["bartek jędrzejewski"],
     publisher: "phalanx",
     categories: ["ancient civilisation", "territory building"],
-    img_url:
-      "https://cf.geekdo-images.com/xLKOIcS7uozAP1DiIIw_Tw__imagepage/img/vheAvGGBftiri8iZRTRzV8xXuK0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7353926.png",
+    img: GiBattleGear,
+    img_url: "",
   },
   {
     id: "2afcefa6-ab8c-4724-9f30-89ebacd6ee77",
@@ -97,8 +106,8 @@ export const boardgameData = [
     artists: ["dommly", "david sitbon", "koota yamada"],
     publisher: "sorry we are french",
     categories: ["medieval"],
-    img_url:
-      "https://cf.geekdo-images.com/ypE6HrTY1Xvpt1XCpKlMBw__imagepage/img/w6deax55UhAtxEmak6hkSPzI6Es=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5960068.png",
+    img: GiJapan,
+    img_url: "",
   },
   {
     id: "2afcefa6-ab8c-4724-9f30-90ebacd6ee77",
@@ -115,7 +124,7 @@ export const boardgameData = [
     artists: ["karolia kijak"],
     publisher: "rebel studio",
     categories: ["animals", "farming"],
-    img_url:
-      "https://cf.geekdo-images.com/uZk1zNLrFWOtYzmgUSZBog__imagepage/img/KTSqsAUixPJTovFLnwu1-Bkdco8=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8515455.png",
+    img: GiGardeningShears,
+    img_url: "",
   },
 ];
